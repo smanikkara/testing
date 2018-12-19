@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Logback XML configured to use Amadeus JTracer appender -->
+
+<configuration scan="true">
+	<appender name="TRACER"
+		class="com.amadeus.mdw.logging.tracer.logback.JTracerAppender">
+		<conversionPattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+			%msg%n</conversionPattern>
+	</appender>
+
+	<logger name="${groupId}" level="INFO" additivity="false">
+		<appender-ref ref="TRACER" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="TRACER" />
+	</root>
+
+</configuration>

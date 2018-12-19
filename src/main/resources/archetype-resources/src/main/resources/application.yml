@@ -1,0 +1,14 @@
+#Configure the application specific configuration
+server.servlet-path: /
+
+cxf:
+  path: /${contextPath} 
+  jaxrs:
+    component-scan: true
+
+#reference to the logback xml file
+logging.config: logback.xml
+
+#prometheus server port
+prometheus:
+  port: 5000
